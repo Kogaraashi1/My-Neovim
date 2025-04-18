@@ -23,6 +23,7 @@ function M.setup()
 			},
 		},
 	})
+	require("luasnip.loaders.from_vscode").lazy_load()
 
 	-- <c-k> is my expansion key
 	-- this will expand the current item or jump to the next item within the snippet.

@@ -15,6 +15,8 @@ M.setup = function()
 			python = { "black" }, -- ya no va anidado
 			lua = { "stylua" },
 			go = { "gofmt", "goimports" },
+			bash = { "shfmt" },
+			zsh = { "shfmt" },
 		},
 	})
 end
