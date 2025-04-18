@@ -8,9 +8,9 @@ M.setup_servers = function()
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
     -- Carga bajo demanda de los servidores
-    require("plugins.lsp.servers.python").setup(M.on_attach, capabilities)
-    require("plugins.lsp.servers.go").setup(M.on_attach, capabilities)
-    require("plugins.lsp.servers.lua").setup(M.on_attach, capabilities)
+    require("config.lsp.servers.python").setup(M.on_attach, capabilities)
+    require("config.lsp.servers.go").setup(M.on_attach, capabilities)
+    require("config.lsp.servers.lua").setup(M.on_attach, capabilities)
 end
 
 M.on_attach = function(client, bufnr)

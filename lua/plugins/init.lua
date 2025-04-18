@@ -1,4 +1,4 @@
--- plugins/init.lua
+-- config/init.lua
 return {
 	-- Plugin de Telescope
 	{
@@ -10,7 +10,7 @@ return {
 		end,
 	},
 
-	-- Configuración LSP (carga todo de plugins/lsp/init.lua)
+	-- Configuración LSP (carga todo de config/lsp/init.lua)
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
@@ -21,7 +21,7 @@ return {
 			"mfussenegger/nvim-lint",
 		},
 		config = function()
-			require("plugins.lsp").setup() -- ← Ahora sí carga correctamente
+			require("config.lsp").setup() -- ← Ahora sí carga correctamente
 		end,
 	},
 }
