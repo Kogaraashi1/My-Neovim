@@ -32,6 +32,7 @@ require("lazy").setup({
   install = {
     colorscheme = { "catppuccin" }  -- Cambia habamax por catppuccin
   },
-  rocks = { enabled = false }, 
+  rocks = { enabled = false },
   checker = { enabled = true },
 })
+

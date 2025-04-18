@@ -1,16 +1,27 @@
--- lua/plugins/init.lua
+-- plugins/init.lua
 return {
-  -- Plugin de Telescope (buscador)
-  {
-    "nvim-telescope/telescope.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-      -- Configuración básica
-      require("telescope").setup()
-      
-      -- Atajos de teclado (opcional pero útil)
-      local map = vim.keymap.set
-      map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find Files" })
-    end,
-  },
+	-- Plugin de Telescope
+	{
+		"nvim-telescope/telescope.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		config = function()
+			require("telescope").setup()
+			vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find Files" })
+		end,
+	},
+
+	-- Configuración LSP (carga todo de plugins/lsp/init.lua)
+	{
+		"neovim/nvim-lspconfig",
+		dependencies = {
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
+			"stevearc/conform.nvim",
+			"hrsh7th/cmp-nvim-lsp",
+			"mfussenegger/nvim-lint",
+		},
+		config = function()
+			require("plugins.lsp").setup() -- ← Ahora sí carga correctamente
+		end,
+	},
 }
